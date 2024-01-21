@@ -11,3 +11,8 @@ jobs:
           node-version: '14'
       - run: npm install -g bats
       - run: bats -v
+
+  call-workflow-passing-data:
+    uses: ./.github/workflows/print-username.yml
+    with:
+      username: 'Kelechi Chima'
