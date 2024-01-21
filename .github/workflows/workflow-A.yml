@@ -1,0 +1,14 @@
+name: caller workflow
+
+on: [push]
+
+jobs:
+    call-workflow:
+        permissions:
+            contents: read
+            pull-requests: write
+        uses: ./.github/workflows/workflow-B.yml
+        with:
+            config-path: .github/labeler.yml
+        secrets:
+            token: ${{ secrets.GITHUB_TOKEN }}
