@@ -1,0 +1,11 @@
+name: Display env variables on runner
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  display-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display env variables available on runner
+        run: env
